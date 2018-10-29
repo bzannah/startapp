@@ -19,11 +19,31 @@ class App extends Component {
     });
   }
 
+  deletePlayer = (id) => {
+    let players = this.state.players.filter(player => {
+      return player.id !== id;
+    });
+    this.setState({
+      players: players
+    });
+  }
+
+
+  componentDidMount() { // when component first mount 
+    console.log('comp mounted');
+  }
+
+  componentDidUpdate(prevProps, prevState) { // when a state or props is changed 
+    console.log('comp updated');
+    console.log(prevProps);
+    console.log(prevState);
+  }
+
   render() {
     return (
       <div className="App">
-        <h1>Heee whooo</h1>
-        <Players players={this.state.players} />
+        <h1>Player App</h1>
+        <Players players={this.state.players} deletePlayer={this.deletePlayer} />
         <AddPlayer addPlayer={this.addPlayer} />
       </div>
     );
