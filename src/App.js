@@ -1,25 +1,30 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Players from './Players';
+import AddPlayer from './AddPlayer';
 
 class App extends Component {
+  state = {
+    players: [
+      { name: 'Messi', age: 20, id: 1 },
+      { name: 'Xavi', age: 34, id: 2 },
+      { name: 'Iniesta', age: 32, id: 3 }
+    ]
+  };
+
+  addPlayer = (player) => {
+    player.id = Math.random(4, 9);
+    let players = [...this.state.players, player];
+    this.setState({
+      players: players
+    });
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <h1>Heee whooo</h1>
+        <Players players={this.state.players} />
+        <AddPlayer addPlayer={this.addPlayer} />
       </div>
     );
   }
