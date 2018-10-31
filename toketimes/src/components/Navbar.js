@@ -2,9 +2,9 @@ import React from 'react';
 import { Link, NavLink, withRouter } from 'react-router-dom';
 
 const Navbar = (props) => {
-    setTimeout(() => {
-        props.history.push('/about')
-    }, 2000);
+    //setTimeout(() => {
+    //    props.history.push('/about')
+    //}, 2000);
 
     // NavLink makes the target Link with class active
     return (
