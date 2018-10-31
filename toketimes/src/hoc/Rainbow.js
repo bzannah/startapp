@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Rainbow = (WrappedComponent) => {
+const Rainbow = (WrappedComponent) => { //higher order comp
 
     const colors = ['grey', 'blue', 'green', 'red', 'yellow'];
     const randomColor = colors[Math.floor(Math.random() * 4)];
