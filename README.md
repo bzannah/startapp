@@ -1,1 +1,1 @@
-React Redux Apps
+React Redux & FireStore Apps
